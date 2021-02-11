@@ -7,7 +7,6 @@ choose your pet
 Class Pets?
 3 Pets
 
-
 Sub classes? share the same actions/properties?
 Dog Cat Rabbit
 
