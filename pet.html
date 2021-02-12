@@ -8,19 +8,38 @@
     <title>CYBERPETS</title>
 </head>
 <body>
-    <div class="wrapper1">
+    <div class="introWrapper">
         
         <alert class="message" id="alert1"><h1>Welcome to Cyber Pets</h1><br>
             <h3>Please select your pet and then name them</h3><br>
             <h4>Then look after your pet and don't kill it!</h4>
         </alert>
-        <h2>Please select your pet</h2>
-        <img class="img" src="/projects/cyberpet/pets/img/dog.jpg"dog" <a></a>>
-        <img class="img" src="/projects/cyberpet/pets/img/cat.jpeg" alt="cat">
-        <img class="img" src="/projects/cyberpet/pets/img/bunny.jpg" alt="rabbit">
+        <h2 class="listTitle">Please select your pet</h2>
+            <ul class="petList">
+                <li><h2>Dog<img class="img" src="/projects/cyberpet/pets/img/dog.jpg"dog" <a></></h2>
+                </li>
+                <li><h2>Cat</h2><img class="img" src="/projects/cyberpet/pets/img/cat.jpeg" alt="cat">
+                </li>
+                <li><h2>Rabbit</h2><img class="img" src="/projects/cyberpet/pets/img/bunny.jpg" alt="rabbit">
+                </li>
+            </ul>
+        <div class="masterPets">
+            <div class="minorPet">
+                <input type="text" class="petName" placeholder="Name your pet here"></input>
+                <h4 class="petChoice"><em>Dog</em></h4>
+                <img id="petImg" class="petImg">
+            </div>            
+            
 
+        </div>
         
     </div>
+    <div class="petsWrapper">
+        <div class="pets">
+
+
+    </div>
     <script src="/projects/cyberpet/pets/pet.js"></script>
+    <script src="/projects/cyberpet/ui.js"></script>
 </body>
 </html>
