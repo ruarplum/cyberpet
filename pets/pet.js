@@ -1,8 +1,8 @@
 // Pet Object Setup 
 class Pet {
-    constructor(name, play, hunger, thirst, happiness, toilet) {
+    constructor(name) {
         // underscore used to keep origional values
-        this._name = name;
+        this.name = name;
         this._hunger = 50;
         this._thirst = 50;
         this._happiness = 50;
@@ -11,9 +11,7 @@ class Pet {
         this._toilet = 0;
     }
     // getters used (I think) to create adjustable values of properites 
-    get name() {
-        return this._name;
-    }
+    
     get hunger() {
         return this._hunger;
     }
@@ -29,7 +27,67 @@ class Pet {
     get toilet() {
         return this._toilet;
     }
+// Setters to cap the top and bottom limits of pet needs 
 
+    set happiness (happiness) {
+        if (happiness <= 0) {
+            this._happiness = 0;
+            console.log(`${this._name} is depressed and having bad thoughts`);
+        } else if (happiness >= 100) {
+                this._happiness = 100;
+                console.log(`${this.name} is unbearably happy`);
+        } else {
+            this.happiness = this.happiness;
+        }
+    }
+
+    set hunger (hunger) {
+        if (hunger <= 0) {
+            this._hunger = 0;
+            console.log(`${this._name} is fat and overfed`);
+        } else if (hunger >= 100) {
+                this._hunger = 100;
+                console.log(`${this.name} has starved to death`);
+        } else {
+            this._hunger = this.hunger;
+        }
+    }
+
+    set thirst (thirst) {
+        if (thirst <= 0) {
+            this._thirst = 0;
+            console.log(`${this._name} can't drink anymore!`);
+        } else if (thirst >= 100) {
+            this._thirst = 100;
+            console.log(`${this._name} has died of dehydration! You shouldn't be trusted with another beings life!`)
+        } else {
+            this._thirst = this.thirst;
+        }
+    }
+
+    set toilet (toilet) {
+        if (toilet <= 0) {
+            this._toilet = 0;
+            console.log(`${this._name} is all crapped out!`);
+        } else if (toilet >= 100) {
+            this._toilet = 100;
+            console.log(`${this._name} has crapped died of constapation! Be a better person`);
+        } else {
+            this.toilet = this.toilet;
+        }
+    }
+
+    set health (health) {
+        if (health <= 0) {
+            this._health = 0;
+            console.log(`${this._name} is dead! Well done you've done "very" well...`);
+        } else if (health >= 100) {
+            this._health = 100;
+            console.log(`${this._name} is going to live for ever if you carry on like this!`);
+        } else {
+            this.health = this.health;
+        }
+    }
     // Functions/ Interactions with pet and the impacts they have
     
     giveFood() {
@@ -47,8 +105,8 @@ class Pet {
     }
 
     playTime() {
-        this.hunger -= 50;
-        this.thirst -= 50;
+        this.hunger += 30;
+        this.thirst += 40;
         this.happiness += 50;
         this.toilet += 10;
         this.health += 20; 
@@ -95,10 +153,26 @@ class Cat extends Pet {
 }
 
 class Rabbit extends Pet {
-    constructor(name, stress) {
+    constructor(name) {
         super(name);
         this._stress = 10;
     }
+    get stress() {
+        return this._stress
+    }
+    set stress (stress) {
+        if (toilet <= 0) {
+            this._stress = 0;
+            console.log(`${this._name} is chilling in the zengarden`);
+        } else if (stress >= 100) {
+            this._stress = 100;
+            console.log(`${this._name} died of a stress induced heart attack! It couldn't handle your neediness...`);
+        } else {
+            this.stress = this.toilet;
+        }
+    }
+    
+
     pickUp() {
         this.stress += 50;
         this.health += 10;
@@ -106,6 +180,6 @@ class Rabbit extends Pet {
     }
 }
 
-How to test?
+// How to test?
 
-// const dog1 = steph
+// // const dog1 = steph
